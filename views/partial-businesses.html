@@ -1,0 +1,20 @@
+<section class="section">
+    <table class="table">
+        <thead>
+            <tr>
+                <td>Business Name</td>
+                <td>Type</td>
+                <td>Neighborhood</td>
+            </tr>
+        </thead>
+        ${businessesList.map(business => 
+            `<tr>
+                <td><a href="/business/${business.id}">${business.name}</a></td> 
+                <td>${business.type}</td>
+                <td>${business.neighborhood}</td>
+            </tr>`
+            ).join('')
+        }
+    </table>    
+</section>
+

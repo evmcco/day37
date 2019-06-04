@@ -1,0 +1,63 @@
+<section class="section">
+    <table class="table">
+        <thead>
+            <tr>
+                <td>Business Name</td>
+                <td>Type</td>
+                <td>Neighborhood</td>
+            </tr>
+        </thead>
+            ${`<tr>
+                <td>${businessData[0].name}</td> 
+                <td>${businessData[0].type}</td>
+                <td>${businessData[0].neighborhood}</td>
+            </tr>`}
+    </table>    
+</section>
+<h1>Reviews for ${businessData[0].name}:</h1>
+<section class="section">
+    <table class="table">
+        <thead>
+            <tr>
+                <td>Reviewer</td>
+                <td>Rating</td>
+                <td>Review</td>
+            </tr>
+        </thead>
+        ${reviewsData.map(review => 
+            `<tr>
+                <td>${review.reviewer_name}</td>
+                <td>${review.starSymbols}</td> 
+                <td>${review.review_text}</td>
+            </tr>`
+            ).join('')
+        }
+    </table>   
+</section>
+<h1>Add Your Review:</h1>
+<section class="section">
+    <form method = "POST">
+        <!-- Name, Stars, Review -->
+        <div>
+        <label>Your Name:</label>
+            <input type="text" name="Name">
+        </div>
+        <div>
+        <label>Rating:</label>
+            <select name="Rating">
+                <option value = "1">⭐</option>
+                <option value = "2">⭐⭐</option>
+                <option value = "3">⭐⭐⭐</option>
+                <option value = "4">⭐⭐⭐⭐</option>
+                <option value = "5">⭐⭐⭐⭐⭐</option>
+            </select>
+        </div>
+        <div>
+        <label>What did tou think?</label>
+            <input type="text" name = "Review">
+        </div>
+        <br>
+        <button type="submit" class="is-primary">Submit</button>
+    </form>
+</section>
+
